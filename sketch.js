@@ -8,6 +8,19 @@ function setup() {
     Callme(8);
 }
 
+function drawnew(angle){
+    tree = [];
+    let a = createVector(width/2, height);
+    let b = createVector(width/2, height-100);
+    for(let i=0;i<Math.floor(l)-1;i++){
+        tree[i].show();
+        if(i==Math.floor(l)-2){
+            let b1 = new Bubble(tree[i].end.x, tree[i].end.y);
+            b1.show();
+        }
+    }
+}
+
 function Callme(recursions){
     tree = [];
     let a = createVector(width/2, height);
