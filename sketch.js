@@ -21,6 +21,22 @@ function drawnew(angle){
     }
 }
 
+//A background task
+function nextBubbles(branch){
+    branch.col.r = (branch.col.r+15)%256;
+    branch.col.g = (branch.col.g)%256;
+    branch.col.b = (branch.col.b)%256;
+    branch.col.a = (branch.col.a-200);
+
+    for(let i=0;i<Math.floor(l)-1;i++){
+        tree[i].show();
+        if(i==Math.floor(l)-2){
+            let b1 = new Bubble(tree[i].end.x, tree[i].end.y);
+            b1.show();
+        }
+    }
+}
+
 function Callme(recursions){
     tree = [];
     let a = createVector(width/2, height);
